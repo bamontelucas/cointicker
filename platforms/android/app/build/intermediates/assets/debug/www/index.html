@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Cointicker</title>
+    </head>
+    <body>
+        <div id="log">
+            
+        </div>
+        <table id="ticker">
+            <thead>
+                <tr>
+                    <th>Nome da moeda</th>
+                    <th>Last</th>
+                    <th>Low</th>
+                    <th>High</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script type="text/javascript" src="cordova.js"></script>
+        <!-- <script type="text/javascript" src="js/index.js"></script> -->
+        <script src="js/require1k.nocache.min.js" data-main="./js/Index"></script>
+    </body>
+</html>
