@@ -39,17 +39,18 @@ exports.__esModule = true;
 var Foxbit_1 = require("./Foxbit");
 var Bitgrail_1 = require("./Bitgrail");
 var Binance_1 = require("./Binance");
-var logDiv = document.querySelector('#log');
-var tickerBody = document.querySelector('#ticker tbody');
+var logContainer = document.querySelector('#log');
+var logList = logContainer.querySelector('ul');
+var tickerBody = document.querySelector('#ticker');
 function log(toLog) {
-    console.log(toLog);
-    logDiv.textContent += String.fromCharCode(10) + (typeof toLog === 'string' ? toLog : JSON.stringify(toLog));
+    console.warn(toLog);
+    console.log(logContainer);
+    logContainer.style.display = 'block';
+    logList.insertAdjacentHTML('beforeend', "<li>" + (typeof toLog === 'string' ? toLog : JSON.stringify(toLog)) + "</li>");
 }
 function addTicker(t) {
     tickerBody.insertAdjacentHTML('beforeend', t.toString());
 }
-Foxbit_1["default"].busca().then(log, log);
-Binance_1["default"].busca().then(log, log);
 (function () { return __awaiter(_this, void 0, void 0, function () {
     var responses, ex_1;
     return __generator(this, function (_a) {

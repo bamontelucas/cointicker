@@ -3,12 +3,15 @@ import Bitgrail, {BitgrailResponse} from './Bitgrail';
 import Binance from './Binance';
 import Ticker from './Ticker';
 
-const logDiv: HTMLDivElement = document.querySelector('#log');
-const tickerBody: HTMLElement = document.querySelector('#ticker tbody');
+const logContainer: HTMLDivElement = document.querySelector('#log');
+const logList: HTMLUListElement = logContainer.querySelector('ul');
+const tickerBody: HTMLElement = document.querySelector('#ticker');
 
 function log(toLog: any) {
-    console.log(toLog);
-    logDiv.textContent += String.fromCharCode(10) + (typeof toLog === 'string' ? toLog : JSON.stringify(toLog));
+    console.warn(toLog);
+    console.log(logContainer);
+    logContainer.style.display = 'block';
+    logList.insertAdjacentHTML('beforeend', `<li>${typeof toLog === 'string' ? toLog : JSON.stringify(toLog)}</li>`);
 }
 
 function addTicker(t:Ticker) {

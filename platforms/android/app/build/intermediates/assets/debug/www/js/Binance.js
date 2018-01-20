@@ -36,12 +36,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var Ticker_1 = require("./Ticker");
+var BinanceSymbol = (function () {
+    function BinanceSymbol(s, d) {
+        this.symbol = s;
+        this.description = d || s;
+    }
+    return BinanceSymbol;
+}());
 var SYMBOLS = [
-    'IOTABTC',
-    'XLMBTC',
-    'FUNBTC',
-    'TRXBTC',
-    'BTCUSDT'
+    new BinanceSymbol('IOTABTC', 'IOTA'),
+    new BinanceSymbol('XLMBTC', 'Stellar'),
+    new BinanceSymbol('FUNBTC', 'Fun'),
+    new BinanceSymbol('TRXBTC', 'Tron'),
+    new BinanceSymbol('BTCUSDT', 'Bitcoin (US$)')
 ];
 var BASE_URL = 'https://api.binance.com/api/v1/ticker/24hr';
 var Binance = (function () {
@@ -49,7 +56,7 @@ var Binance = (function () {
         this.symbol = symbol;
     }
     Binance.prototype.url = function () {
-        return BASE_URL + "?symbol=" + this.symbol;
+        return BASE_URL + "?symbol=" + this.symbol.symbol;
     };
     Binance.prototype.busca = function () {
         return fetch(this.url());
@@ -74,7 +81,9 @@ var Binance = (function () {
         });
     };
     Binance.ticker = function (res) {
-        return new Ticker_1["default"](res.symbol, res.lastPrice, res.lowPrice, res.highPrice);
+        var s = SYMBOLS.filter(function (s) { return s.symbol === res.symbol; });
+        var symbolName = s.length === 0 ? res.symbol : s[0].description;
+        return new Ticker_1["default"](symbolName, res.lastPrice, res.lowPrice, res.highPrice);
     };
     return Binance;
 }());
