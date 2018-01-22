@@ -2,7 +2,7 @@
 <widget id="com.bamontelucas.cointicker" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Cointicker</name>
     <description>
-        A unified place for checking cryptocoins values. Personal use.
+        An unified place for checking cryptocoins values. Personal use.
     </description>
     <author email="bamontelucas@gmail.com" href="https://github.com/bamontelucas">
         Lucas Bamonte Corrêa

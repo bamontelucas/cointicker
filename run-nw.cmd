@@ -1,0 +1,1 @@
+start .\platforms\nwjs\nw .

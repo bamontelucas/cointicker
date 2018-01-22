@@ -1,13 +1,13 @@
 {
-    "name": "helloworld",
-    "displayName": "HelloCordova",
+    "name": "cointicker",
+    "displayName": "Cointicker",
     "version": "1.0.0",
-    "description": "A sample Apache Cordova application that responds to the deviceready event.",
-    "main": "index.js",
+    "description": "An unified place for checking cryptocoins values. Personal use.",
+    "main": "www/index.html",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "Apache Cordova Team",
+    "author": "Lucas Bamonte Corrêa",
     "license": "Apache-2.0",
     "dependencies": {
         "cordova-android": "^7.0.0",
@@ -22,5 +22,9 @@
             "android",
             "browser"
         ]
+    },
+    "window": {
+        "width": 480,
+        "height": 1000
     }
 }
