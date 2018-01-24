@@ -11,15 +11,16 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 var dexie_1 = require("dexie");
-var Database = (function (_super) {
-    __extends(Database, _super);
-    function Database() {
-        var _this = _super.call(this, "Cointicker DB") || this;
+var CointickerDB = (function (_super) {
+    __extends(CointickerDB, _super);
+    function CointickerDB() {
+        var _this = _super.call(this, "CointickerDB") || this;
         _this.version(1).stores({
-            moedas: 'symbol'
+            moedas: 'symbol',
+            precos: ',moeda'
         });
         return _this;
     }
-    return Database;
+    return CointickerDB;
 }(dexie_1["default"]));
-//# sourceMappingURL=Database.js.map
+//# sourceMappingURL=CointickerDB.js.map
