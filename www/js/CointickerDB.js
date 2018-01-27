@@ -16,8 +16,11 @@ var CointickerDB = (function (_super) {
     function CointickerDB() {
         var _this = _super.call(this, "CointickerDB") || this;
         _this.version(1).stores({
-            moedas: 'symbol',
-            precos: ',moeda'
+            exchanges: 'nome',
+            moedas: 'codigo',
+            radar: ',moeda,exchange,moedapreco,symbol',
+            historico: ',moeda,exchange,moedapreco,symbol,data',
+            carteira: ',moeda,exchange'
         });
         return _this;
     }

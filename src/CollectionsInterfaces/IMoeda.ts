@@ -1,7 +1,6 @@
 import IExchange from './IExchange';
 
 export default interface IMoeda {
-    symbol: string;
+    codigo: string;
     description: string;
-    moeda: IExchange;
 }
