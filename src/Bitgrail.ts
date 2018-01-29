@@ -1,6 +1,6 @@
 import Ticker from './Ticker';
 
-const URL: string = 'https://bitgrail.com/api/v1/BTC-XRB/ticker';
+const URL: string = 'https://api.bitgrail.com/v1/BTC-XRB/ticker';
 
 export default class Bitgrail {
     static async busca() {

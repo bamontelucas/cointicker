@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var Ticker_1 = require("./Ticker");
-var URL = 'https://bitgrail.com/api/v1/BTC-XRB/ticker';
+var URL = 'https://api.bitgrail.com/v1/BTC-XRB/ticker';
 var Bitgrail = (function () {
     function Bitgrail() {
     }
